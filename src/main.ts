@@ -12,16 +12,16 @@ async function bootstrap() {
   });
 
   const config = new DocumentBuilder()
-    .setTitle("OKR API")
+    .setTitle('OKR API')
     .setDescription(
-      "API criada para um sistema de OKRs, utilizando NestJS, TypeORM, PostgreSQL e Docker. Nesta API é possível criar usuários, objetivos e key-results. Bem como fazer consultas por ID."
+      'API criada para gestão de processo do escritório AHPSilva, utilizando NestJS, TypeORM e PostgreSQL. Nesta API é possível criar usuários e processos. Bem como fazer consultas por ID.'
     )
-    .setVersion("1.0")
+    .setVersion('1.0')
     .addBearerAuth(
-      { type: "http", scheme: "bearer", bearerFormat: "Token" },
-      "access-token"
+      { type: 'http', scheme: 'bearer', bearerFormat: 'Token' },
+      'access-token'
     )
-    .build();
+    .build()
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup("api", app, document);

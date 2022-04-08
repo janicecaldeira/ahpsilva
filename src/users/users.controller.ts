@@ -85,25 +85,14 @@ export class UsersController {
     return this.usersService.findAll()
   }
 
-  @Get('/objectives/:id')
+  @Get('/process/:id')
   @ApiOperation({
-    summary: 'Busca objetivos pertencentes a usuário especificado por id'
+    summary: 'Busca processos pertencentes a usuário especificado por id'
   })
   @ApiOkResponse({ description: 'Sucesso' })
-  @ApiNotFoundResponse({ description: 'Usuário não possui objetivos' })
-  async findObjectiveByUser(@Param('id') id: string) {
-    return await this.usersService.findObjectiveByUser(id)
-  }
-
-  @Get('/key_results/:id')
-  @ApiOperation({
-    summary:
-      'Busca resultados-chaves pertencentes a usuário especificado por id'
-  })
-  @ApiOkResponse({ description: 'Sucesso' })
-  @ApiNotFoundResponse({ description: 'Usuário não possui resultados-chave' })
-  async findKeyResultByUser(@Param('id') id: string) {
-    return await this.usersService.findKeyResultByUser(id)
+  @ApiNotFoundResponse({ description: 'Usuário não possui processos' })
+  async findProcessByUser(@Param('id') id: string) {
+    return await this.usersService.findProcessByUser(id)
   }
 
   @Get('/:id')

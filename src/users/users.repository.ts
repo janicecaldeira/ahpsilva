@@ -39,11 +39,11 @@ export class UserRepository extends Repository<User> {
     }
   }
 
-  async findObjectiveByUser(id: string): Promise<any> {
+  async findProcessByUser(id: string): Promise<any> {
     const query = this.createQueryBuilder('user')
     query.where('user.id = :id', { id })
-    query.innerJoinAndSelect('user.objectives', 'objectives')
-    query.select(['user.id', 'objectives'])
+    query.innerJoinAndSelect('user.process', 'process')
+    query.select(['user.id', 'process'])
     return await query.getOne()
   }
 

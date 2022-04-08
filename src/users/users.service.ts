@@ -41,12 +41,12 @@ export class UsersService {
     })
   }
 
-  async findObjectiveByUser(userId: string): Promise<User[]> {
-    const objectives = await this.userRepository.findObjectiveByUser(userId)
+  async findProcessByUser(userId: string): Promise<User[]> {
+    const process = await this.userRepository.findProcessByUser(userId)
 
-    if (!objectives) throw new NotFoundException('Usuário não possui objetivos')
+    if (!process) throw new NotFoundException('Usuário não possui processos')
 
-    return objectives
+    return process
   }
 
   async findKeyResultByUser(userId: string): Promise<User[]> {

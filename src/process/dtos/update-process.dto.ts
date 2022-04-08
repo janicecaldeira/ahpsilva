@@ -1,44 +1,37 @@
-import { IsString, IsNotEmpty } from 'class-validator'
+import { IsOptional } from 'class-validator'
 import { User } from 'src/users/user.entity'
 import { ApiProperty } from '@nestjs/swagger'
 
-export class CreateProcessDto {
-  @IsNotEmpty({ message: 'Informe um cliente' })
+export class UpdateProcessDto {
+  @IsOptional()
   @ApiProperty({ description: 'Cliente do processo' })
   client: User
 
-  @IsString()
-  @IsNotEmpty({ message: 'Informe o número do processo' })
+  @IsOptional()
   @ApiProperty({ description: 'Especificar o número do processo' })
   numberOfProcess: string
 
-  @IsString()
-  @IsNotEmpty({ message: 'Informe o sistema' })
+  @IsOptional()
   @ApiProperty({ description: 'Sistema' })
   system: string
 
-  @IsString()
-  @IsNotEmpty({ message: 'Informa a comarca' })
+  @IsOptional()
   @ApiProperty({ description: 'Comarca' })
   comarca: string
 
-  @IsString()
-  @IsNotEmpty({ message: 'Informe a vara/câmara' })
+  @IsOptional()
   @ApiProperty({ description: 'Vara/câmara' })
   vara: string
 
-  @IsString()
-  @IsNotEmpty({ message: 'Informe uma data inicial' })
+  @IsOptional()
   @ApiProperty({ description: 'Data inicial' })
   initialDate: string
 
-  @IsString()
-  @IsNotEmpty({ message: 'Informe um tipo' })
+  @IsOptional()
   @ApiProperty({ description: 'Tipo de processo' })
   type: string
 
-  @IsString()
-  @IsNotEmpty({ message: 'Informe um advogado' })
+  @IsOptional()
   @ApiProperty({ description: 'Advogado responsável' })
   lawyer: string
 }

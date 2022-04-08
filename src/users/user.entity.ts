@@ -7,7 +7,7 @@ import {
   OneToMany
 } from 'typeorm'
 import * as bcrypt from 'bcryptjs'
-import { Objective } from 'src/process/process.entity'
+import { Process } from 'src/process/process.entity'
 import { ApiProperty } from '@nestjs/swagger'
 
 @Entity()

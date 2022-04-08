@@ -7,7 +7,7 @@ import { LoggerInterceptor } from "src/interceptors/logger.interceptor";
 import { APP_INTERCEPTOR } from "@nestjs/core";
 import { WinstonModule } from "nest-winston";
 import { winstonConfig } from "src/configs/winston.config";
-import { ObjectivesModule } from './process/objectives.module'
+import { ProcessModule } from './process/process.module'
 
 @Module({
   imports: [
@@ -15,7 +15,7 @@ import { ObjectivesModule } from './process/objectives.module'
     WinstonModule.forRoot(winstonConfig),
     UsersModule,
     AuthModule,
-    ObjectivesModule
+    ProcessModule
   ],
   controllers: [],
   providers: [
